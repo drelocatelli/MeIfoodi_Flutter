@@ -40,29 +40,20 @@ class _HomeState extends State<Home> {
         ],
       ),
       bottomNavigationBar: BottomNavigation(),
-      body: Container(
-        padding: EdgeInsets.all(10),
-        child: SingleChildScrollView(
-          child: Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Expanded(
-                      child: Filters()
-                      )
-                    ),
-                 
-                ),
-                Categories(),
-                Foods()
-              ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Filters(),
+            Categories(),
+            Container(
+              padding: EdgeInsets.only(left: 10, top: 30),
+              child: Text("Selecione sua comida favorita:", style: TextStyle(fontWeight: FontWeight.bold))
             ),
-          ),
+            Foods()
+          ],
         ),
       )
     );

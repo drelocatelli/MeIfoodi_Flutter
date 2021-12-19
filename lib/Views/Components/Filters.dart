@@ -7,32 +7,35 @@ class Filters extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 3),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          FilterBox(
-            icone: Icons.filter_list,
-            titulo: "Filtros",
-          ),
-          FilterBox(
-            icone: Icons.arrow_downward,
-            titulo: "Para retirar",
-          ),
-          FilterBox(
-            icone: Icons.shop_rounded,
-            titulo: "Tipo da loja",
-          ),
-          FilterBox(
-            icone: Icons.reorder,
-            titulo: "Ordenar",
-          ),
-          FilterBox(
-            icone: Icons.bookmark,
-            titulo: "Categorias",
-          ),
-        ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 5, vertical: 3),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            FilterBox(
+              icone: Icons.filter_list,
+              titulo: "Filtros",
+            ),
+            FilterBox(
+              icone: Icons.arrow_downward,
+              titulo: "Para retirar",
+            ),
+            FilterBox(
+              icone: Icons.shop_rounded,
+              titulo: "Tipo da loja",
+            ),
+            FilterBox(
+              icone: Icons.reorder,
+              titulo: "Ordenar",
+            ),
+            FilterBox(
+              icone: Icons.bookmark,
+              titulo: "Categorias",
+            ),
+          ],
+        ),
       ),
     );
   }
