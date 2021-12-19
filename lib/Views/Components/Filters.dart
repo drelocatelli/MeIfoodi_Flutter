@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Mini/FilterBox.dart';
+
 class Filters extends StatelessWidget {
   const Filters({ Key? key }) : super(key: key);
 
@@ -10,56 +12,26 @@ class Filters extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          TextButton(
-            onPressed: (){}, 
-            child: Row(
-              children: [
-                Icon(Icons.filter_list, color: Colors.white, size: 20),
-                SizedBox(width: 5),
-                Text("Filtros", style: TextStyle(color: Colors.white)),
-              ],
-            )
+          FilterBox(
+            icone: Icons.filter_list,
+            titulo: "Filtros",
           ),
-          TextButton(
-            onPressed: (){}, 
-            child: Row(
-              children: [
-                Icon(Icons.arrow_downward, color: Colors.white, size: 20),
-                SizedBox(width: 5),
-                Text("Para retirar", style: TextStyle(color: Colors.white)),
-              ],
-            )
+          FilterBox(
+            icone: Icons.arrow_downward,
+            titulo: "Para retirar",
           ),
-          TextButton(
-            onPressed: (){}, 
-            child: Row(
-              children: [
-                Icon(Icons.shop_rounded, color: Colors.white, size: 20),
-                SizedBox(width: 5),
-                Text("Tipo da loja", style: TextStyle(color: Colors.white)),
-              ],
-            )
+          FilterBox(
+            icone: Icons.shop_rounded,
+            titulo: "Tipo da loja",
           ),
-          TextButton(
-            onPressed: (){}, 
-            child: Row(
-              children: [
-                Icon(Icons.reorder, color: Colors.white, size: 20),
-                SizedBox(width: 5),
-                Text("Ordenar", style: TextStyle(color: Colors.white)),
-              ],
-            )
+          FilterBox(
+            icone: Icons.reorder,
+            titulo: "Ordenar",
           ),
-          TextButton(
-            onPressed: (){}, 
-            child: Row(
-              children: [
-                Icon(Icons.bookmark, color: Colors.white, size: 20),
-                SizedBox(width: 5),
-                Text("Categorias", style: TextStyle(color: Colors.white)),
-              ],
-            )
-          )
+          FilterBox(
+            icone: Icons.bookmark,
+            titulo: "Categorias",
+          ),
         ],
       ),
     );

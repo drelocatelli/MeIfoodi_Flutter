@@ -37,13 +37,15 @@ class Categories extends StatelessWidget {
                   ),
                   SizedBox(width: 10),
                   Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text("Mercado", style: TextStyle(color: Colors.white, fontSize: 22)),
-                        Center(child: Image.asset("assets/carrinho.png", width: MediaQuery.of(context).size.width * 0.27))
-                      ],
+                    child: Flexible(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text("Mercado", style: TextStyle(color: Colors.white, fontSize: 22)),
+                          Center(child: Image.asset("assets/carrinho.png", width: MediaQuery.of(context).size.width * 0.25))
+                        ],
+                      ),
                     ),
                     padding: EdgeInsets.all(10),
                     width: MediaQuery.of(context).size.width * 0.5,

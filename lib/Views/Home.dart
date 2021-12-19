@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'Components/Categories.dart';
 import 'Components/Filters.dart';
 import 'Components/Foods.dart';
+import 'Components/Mini/BottomNavigation.dart';
 
 class Home extends StatefulWidget {
   const Home({ Key? key }) : super(key: key);
@@ -26,7 +27,7 @@ class _HomeState extends State<Home> {
         elevation: 0,
         title: Padding(
           padding: EdgeInsets.only(left: spacing),
-          child: Text("Me Aifoodi", style: TextStyle(color: Colors.black)),
+          child: Text("IFud", style: TextStyle(color: Colors.black)),
         ),
         actions: [
           IconButton(
@@ -38,49 +39,30 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.fastfood),
-        backgroundColor: Colors.red,
-      ),
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.all(20),
-        child: Text("Drelocatelli", style:TextStyle(color: Colors.white)),
-        decoration: BoxDecoration(
-          color: Colors.black38,
-        )
-      ),
+      bottomNavigationBar: BottomNavigation(),
       body: Container(
         padding: EdgeInsets.all(10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: MediaQuery.of(context).size.width,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Expanded(
-                  child: Filters()
-                  )
+        child: SingleChildScrollView(
+          child: Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Expanded(
+                      child: Filters()
+                      )
+                    ),
+                 
                 ),
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 10,
-                    spreadRadius: 0.0,
-                    offset: Offset(2.0, 5)
-                  )
-                ]
-              ),
+                Categories(),
+                Foods()
+              ],
             ),
-            Categories(),
-            Foods()
-          ],
+          ),
         ),
       )
     );
